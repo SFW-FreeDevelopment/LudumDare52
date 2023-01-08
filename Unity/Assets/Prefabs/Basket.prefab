@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 8183403467249888447}
   - component: {fileID: 8183403467249888444}
   - component: {fileID: 8874541906771575508}
+  - component: {fileID: 8085279026287532504}
   m_Layer: 0
   m_Name: Square (3)
   m_TagString: Basket
@@ -111,6 +112,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &8085279026287532504
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8183403467249888446}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a8c16859f12dde428b2d84194d05e53, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8183403467322720552
 GameObject:
   m_ObjectHideFlags: 0
