@@ -7,18 +7,32 @@ namespace LD52
     public class CropDragger : MonoBehaviour
     {
         private bool isDragging;
-        private Vector2 initialPosition;
+        private bool isInBasket;
+        private Vector2 initialPosition = new Vector2( 0, 0);
 
         public void OnMouseDown()
         {
             isDragging = true;
-            initialPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
+            initialPosition = transform.position;
         }
 
         public void OnMouseUp()
         {
             isDragging = false;
-            transform.Translate(initialPosition);
+            if (!isInBasket)
+            {
+                transform.position = initialPosition;
+            }
+        }
+
+        private void OnTriggerEnter2D()
+        {
+            isInBasket = true;
+        }
+
+        private void OnTriggerExit2D()
+        {
+            isInBasket = false;
         }
 
         // Update is called once per frame
