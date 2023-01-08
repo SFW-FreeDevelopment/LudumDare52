@@ -1,5 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
+using LD52.Managers;
 using UnityEngine;
 
 namespace LD52
@@ -12,12 +11,14 @@ namespace LD52
 
         public void OnMouseDown()
         {
+            AudioManager.Instance.Play("carrotpull");
             isDragging = true;
             initialPosition = transform.position;
         }
 
         public void OnMouseUp()
         {
+            AudioManager.Instance.Play("placeinbasket");
             isDragging = false;
             if (!isInBasket)
             {
