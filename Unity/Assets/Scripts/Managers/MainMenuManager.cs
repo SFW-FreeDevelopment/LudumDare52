@@ -20,14 +20,17 @@ namespace LD52.Managers
         {
             _startButton.onClick.AddListener(() =>
             {
+                AudioManager.Instance.Play("click");
                 SceneManager.LoadScene("Minigame");
             });
             _settingsButton.onClick.AddListener(() =>
             {
+                AudioManager.Instance.Play("click");
                 _settingsWindow.SetActive(true);
             });
             _creditsButton.onClick.AddListener(() =>
             {
+                AudioManager.Instance.Play("click");
                 _creditsWindow.SetActive(true);
             });
         }
