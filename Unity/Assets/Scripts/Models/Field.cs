@@ -1,4 +1,6 @@
-﻿namespace LD52.Models
+﻿using LD52.ScriptableObjects;
+
+namespace LD52.Models
 {
     public class Field
     {
@@ -10,7 +12,7 @@
             {
                 for (var j = 0; j < 3; j++)
                 {
-                    Crops[i, j] = new CropInstance(crop.Id);
+                    Crops[i, j] = new CropInstance(crop.Name);
                 }
             }
         }

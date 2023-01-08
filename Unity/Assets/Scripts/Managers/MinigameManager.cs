@@ -1,6 +1,7 @@
-using System;
 using LD52.Abstractions;
 using LD52.Controllers;
+using LD52.ScriptableObjects;
+using Mono.Cecil;
 using TMPro;
 using UnityEngine;
 
@@ -14,6 +15,9 @@ namespace LD52.Managers
         private Coroutine _timerRoutine;
         [SerializeField] private TextMeshProUGUI _timerText;
 
+        [SerializeField] private Crop[] _crops;
+        public Crop[] Crops => _crops;
+
         private void ResetUI()
         {
             _timerText.text = "0:00";
@@ -22,6 +26,7 @@ namespace LD52.Managers
         protected override void InitSingletonInstance()
         {
             ResetUI();
+            _crops = Resources.LoadAll<Crop>("Crops");
             EventController.OnBasketCollected += OnBasketCollected;
             _timerRoutine = StartCoroutine(CoroutineTemplate.DelayAndFireLoopRoutine(1, () =>
             {

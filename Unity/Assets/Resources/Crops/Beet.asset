@@ -14,3 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _sprite: {fileID: 21300000, guid: 36cf372ff71a22a4b90c5e9e49e0a88a, type: 3}
   _respawnTime: 10
+  _cropType: 1

@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using LD52.Enums;
+using UnityEngine;
 
 namespace LD52.ScriptableObjects
 {
@@ -12,5 +13,8 @@ namespace LD52.ScriptableObjects
         
         [SerializeField] private float _respawnTime;
         public float RespawnTime => _respawnTime;
+
+        [SerializeField] private CropType _cropType;
+        public CropType CropType => _cropType;
     }
 }
