@@ -8,7 +8,7 @@ namespace LD52
     {
         private bool isDragging;
         private bool isInBasket;
-        private Vector2 initialPosition = new Vector2( 0, 0);
+        private Vector2 initialPosition = new Vector2(0, 0);
 
         public void OnMouseDown()
         {
@@ -25,9 +25,12 @@ namespace LD52
             }
         }
 
-        private void OnTriggerEnter2D()
+        private void OnTriggerEnter2D(Collider2D collider)
         {
-            isInBasket = true;
+            if (collider.gameObject.CompareTag("Basket"))
+            {
+                isInBasket = true;
+            }
         }
 
         private void OnTriggerExit2D()
@@ -43,7 +46,7 @@ namespace LD52
                 Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
                 transform.Translate(mousePosition);
             }
-        
+
         }
     }
 }
