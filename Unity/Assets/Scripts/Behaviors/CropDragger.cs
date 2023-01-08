@@ -8,7 +8,7 @@ namespace LD52
     {
         private bool isDragging;
         private bool isInBasket;
-        private Vector2 initialPosition = new Vector2(0, 0);
+        private Vector2 initialPosition = new Vector2(0f, 0f);
 
         public void OnMouseDown()
         {
