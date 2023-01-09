@@ -571,12 +571,26 @@ PlayerSettings:
   webGLTemplate: APPLICATION:Default
   webGLAnalyzeBuildSize: 0
   webGLUseEmbeddedResources: 0
-  webGLCompressionFormat: 0
+  webGLCompressionFormat: 2
   webGLWasmArithmeticExceptions: 0
   webGLLinkerTarget: 1
   webGLThreadsSupport: 0
   webGLDecompressionFallback: 0
-  scriptingDefineSymbols: {}
+  scriptingDefineSymbols:
+    Android: CT_TPS
+    EmbeddedLinux: CT_TPS
+    GameCoreXboxOne: CT_TPS
+    Lumin: CT_TPS
+    Nintendo Switch: CT_TPS
+    PS4: CT_TPS
+    PS5: CT_TPS
+    Stadia: CT_TPS
+    Standalone: CT_TPS
+    WebGL: CT_TPS
+    Windows Store Apps: CT_TPS
+    XboxOne: CT_TPS
+    iPhone: CT_TPS
+    tvOS: CT_TPS
   additionalCompilerArguments: {}
   platformArchitecture: {}
   scriptingBackend: {}
