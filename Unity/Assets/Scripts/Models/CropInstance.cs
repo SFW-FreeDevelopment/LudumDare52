@@ -41,6 +41,7 @@ namespace LD52.Models
             yield return new WaitForSeconds(crop.RespawnTime);
             _spriteRenderer.sprite = _originalSprite;
             _boxCollider2D.enabled = true;
+            AudioManager.Instance.Play("grown");
         }
     }
 }
