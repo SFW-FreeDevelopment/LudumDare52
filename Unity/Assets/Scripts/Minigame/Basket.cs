@@ -77,7 +77,7 @@ namespace LD52.Minigame
             var originalPosition = transform.position;
             var targetPosition = new Vector2(originalPosition.x, originalPosition.y - 5);
 
-            while (Vector2.Distance(transform.position, targetPosition) > 0.1f)
+            while (Vector2.Distance(transform.position, targetPosition) > 0.001f)
             {
                 yield return null;
                 transform.position = Vector2.MoveTowards(transform.position, targetPosition, Time.deltaTime * 5);
@@ -85,7 +85,7 @@ namespace LD52.Minigame
             
             Generate();
             
-            while (Vector2.Distance(transform.position, originalPosition) > 0.1f)
+            while (Vector2.Distance(transform.position, originalPosition) > 0.001f)
             {
                 yield return null;
                 transform.position = Vector2.MoveTowards(transform.position, originalPosition, Time.deltaTime * 5);
