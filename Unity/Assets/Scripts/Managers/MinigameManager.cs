@@ -20,7 +20,8 @@ namespace LD52.Managers
         [SerializeField] private TextMeshProUGUI _timerText, _basketText, _gameOverText;
         [SerializeField] private GameObject _gameOverWindow;
         [SerializeField] private Button _gameOverReturnButton;
-
+        [SerializeField] private AudioSource _musicAudioSource;
+        
         [SerializeField] private Crop[] _crops;
         public Crop[] Crops => _crops;
 
@@ -32,6 +33,7 @@ namespace LD52.Managers
         protected override void InitSingletonInstance()
         {
             ResetUI();
+            _musicAudioSource.volume = SettingsManager.Instance.Settings.MusicVolume;
             EventController.OnBasketCollected += OnBasketCollected;
             EventController.OnGameOver += OnGameOver;
             _gameOverReturnButton.onClick.AddListener(() =>

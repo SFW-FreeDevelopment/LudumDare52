@@ -9,11 +9,21 @@ namespace LD52.UI
     {
         private void Start()
         {
-            GetComponent<Button>().onClick.AddListener(() =>
-            {
-                AudioManager.Instance.Play("back");
-                transform.parent.gameObject.SetActive(false);
-            });
+            GetComponent<Button>().onClick.AddListener(Close);
+        }
+        
+        private void Update()
+        {
+            if (Input.GetKeyDown(KeyCode.Escape))
+                Close();
+        }
+
+        private void Close()
+        {
+            var go = transform.parent.gameObject;
+            if (!go.activeSelf) return;
+            AudioManager.Instance.Play("back");
+            go.SetActive(false);
         }
     }
 }
