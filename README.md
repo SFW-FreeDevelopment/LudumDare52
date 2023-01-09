@@ -18,7 +18,7 @@ Fill the baskets with vegetables as fast as possible to fulfill harvest orders. 
 
 ## Links
 - [Web Player](https://stevengarberg.itch.io/harvest-rush)
-- [GitHub Repository](https://github.com/SFW-FreeDevelopment/LudumDare52)
+- [Ludum Dare Entry](https://ldjam.com/events/ludum-dare/52/harvest-rush)
 
 ## Tools
 - Unity
