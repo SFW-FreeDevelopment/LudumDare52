@@ -28,15 +28,15 @@ namespace LD52.Managers
         {
             _timerText.text = "0:30";
         }
-        
+
         protected override void InitSingletonInstance()
         {
             ResetUI();
-            _crops = Resources.LoadAll<Crop>("Crops");
             EventController.OnBasketCollected += OnBasketCollected;
             EventController.OnGameOver += OnGameOver;
             _gameOverReturnButton.onClick.AddListener(() =>
             {
+                AudioManager.Instance.Play("click");
                 SceneManager.LoadScene("Menu");
             });
             _timerRoutine = StartCoroutine(CoroutineTemplate.DelayAndFireLoopRoutine(1, () =>
@@ -73,6 +73,7 @@ namespace LD52.Managers
 
         private void OnGameOver()
         {
+            AudioManager.Instance.Play("outoftime");
             _gameOver = true;
             StopCoroutine(_timerRoutine);
             var timeText = _currentTime < 60

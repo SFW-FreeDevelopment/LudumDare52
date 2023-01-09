@@ -11,7 +11,7 @@ namespace LD52.UI
         {
             GetComponent<Button>().onClick.AddListener(() =>
             {
-                AudioManager.Instance.Play("click");
+                AudioManager.Instance.Play("back");
                 transform.parent.gameObject.SetActive(false);
             });
         }

@@ -59,12 +59,13 @@ namespace LD52.Minigame
             }
             else
             {
+                AudioManager.Instance.Play("reject");
                 return false;
             }
 
             if (_leftCrop.Filled && _centerCrop.Filled && _rightCrop.Filled)
             {
-                // TODO: Play basket complete sound
+                AudioManager.Instance.Play("basketcomplete");
                 EventController.BasketCollected();
                 StartCoroutine(ResetBasketRoutine());
             }

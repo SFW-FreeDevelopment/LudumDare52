@@ -18,12 +18,18 @@ namespace LD52
         private BoxCollider2D _boxCollider2D;
         private CropInstance _cropInstance;
         private SpriteRenderer _spriteRenderer;
+        private Camera _camera;
 
         private void Awake()
         {
             _boxCollider2D = GetComponent<BoxCollider2D>();
             _cropInstance = GetComponent<CropInstance>();
             _spriteRenderer = GetComponent<SpriteRenderer>();
+        }
+
+        private void Start()
+        {
+            _camera = Camera.main;
         }
 
         public void OnMouseDown()
@@ -35,7 +41,7 @@ namespace LD52
 
         public void OnMouseUp()
         {
-            AudioManager.Instance.Play("placeinbasket");
+            AudioManager.Instance.Play("cropinbasket");
             isDragging = false;
             if (!isInBasket)
             {
@@ -68,15 +74,12 @@ namespace LD52
             isInBasket = false;
             _basket = null;
         }
-
-        // Update is called once per frame
-        void Update()
+        
+        private void Update()
         {
-            if (isDragging)
-            {
-                Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
-                transform.Translate(mousePosition);
-            }
+            if (!isDragging) return;
+            Vector2 mousePosition = _camera.ScreenToWorldPoint(Input.mousePosition) - transform.position;
+            transform.Translate(mousePosition);
         }
     }
 }

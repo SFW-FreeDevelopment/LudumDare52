@@ -4605,6 +4605,30 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 596362150}
     - target: {fileID: 4979174502578269400, guid: bc26a189f4fe0b145b20202657a00ab0, type: 3}
+      propertyPath: _crops.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4979174502578269400, guid: bc26a189f4fe0b145b20202657a00ab0, type: 3}
+      propertyPath: _crops.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: 9a37cad18fd265e4d94ae2f8589cc927, type: 2}
+    - target: {fileID: 4979174502578269400, guid: bc26a189f4fe0b145b20202657a00ab0, type: 3}
+      propertyPath: _crops.Array.data[1]
+      value: 
+      objectReference: {fileID: 11400000, guid: 7bab4669f7cfe834a86f4e88b5111924, type: 2}
+    - target: {fileID: 4979174502578269400, guid: bc26a189f4fe0b145b20202657a00ab0, type: 3}
+      propertyPath: _crops.Array.data[2]
+      value: 
+      objectReference: {fileID: 11400000, guid: 518ea3036ea98c841ae22c4fea41cc02, type: 2}
+    - target: {fileID: 4979174502578269400, guid: bc26a189f4fe0b145b20202657a00ab0, type: 3}
+      propertyPath: _crops.Array.data[3]
+      value: 
+      objectReference: {fileID: 11400000, guid: 120070a3931f8b040837b16e0ff5b693, type: 2}
+    - target: {fileID: 4979174502578269400, guid: bc26a189f4fe0b145b20202657a00ab0, type: 3}
+      propertyPath: _crops.Array.data[4]
+      value: 
+      objectReference: {fileID: 11400000, guid: 11d417fb386b6a14a9c8dc341a05bc43, type: 2}
+    - target: {fileID: 4979174502578269400, guid: bc26a189f4fe0b145b20202657a00ab0, type: 3}
       propertyPath: _gameOverReturnButton
       value: 
       objectReference: {fileID: 1069002964}

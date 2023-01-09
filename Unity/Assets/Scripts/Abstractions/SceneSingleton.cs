@@ -23,7 +23,7 @@ namespace LD52.Abstractions
             if (Instance == this)
                 InitSingletonInstance();
         }
-
+        
         protected abstract void InitSingletonInstance();
     }
 }
