@@ -13,7 +13,7 @@ namespace LD52.Managers
         private ushort _basketsCollected = 0;
 
         private Coroutine _timerRoutine;
-        [SerializeField] private TextMeshProUGUI _timerText;
+        [SerializeField] private TextMeshProUGUI _timerText, _basketText;
 
         [SerializeField] private Crop[] _crops;
         public Crop[] Crops => _crops;
@@ -45,6 +45,7 @@ namespace LD52.Managers
         private void OnBasketCollected()
         {
             _basketsCollected++;
+            _basketText.text = _basketsCollected.ToString();
         }
 
         private void GameOver()

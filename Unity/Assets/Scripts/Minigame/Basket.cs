@@ -1,7 +1,12 @@
-﻿using LD52.Enums;
+﻿using System;
+using System.Collections;
+using System.Collections.Generic;
+using LD52.Controllers;
+using LD52.Enums;
 using LD52.Managers;
 using LD52.ScriptableObjects;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 namespace LD52.Minigame
 {
@@ -16,6 +21,11 @@ namespace LD52.Minigame
         [SerializeField] private SpriteRenderer _RightCropSpriteRenderer;
 
         private (Crop Crop, bool Filled) _leftCrop, _centerCrop, _rightCrop;
+
+        private void Start()
+        {
+            Generate();
+        }
 
         public void Generate()
         {
@@ -55,10 +65,31 @@ namespace LD52.Minigame
             if (_leftCrop.Filled && _centerCrop.Filled && _rightCrop.Filled)
             {
                 // TODO: Play basket complete sound
-                // TODO: Basket complete things
+                EventController.BasketCollected();
+                StartCoroutine(ResetBasketRoutine());
             }
             
             return true;
+        }
+
+        private IEnumerator ResetBasketRoutine()
+        {
+            var originalPosition = transform.position;
+            var targetPosition = new Vector2(originalPosition.x, originalPosition.y - 5);
+
+            while (Vector2.Distance(transform.position, targetPosition) > 0.1f)
+            {
+                yield return null;
+                transform.position = Vector2.MoveTowards(transform.position, targetPosition, Time.deltaTime * 5);
+            }
+            
+            Generate();
+            
+            while (Vector2.Distance(transform.position, originalPosition) > 0.1f)
+            {
+                yield return null;
+                transform.position = Vector2.MoveTowards(transform.position, originalPosition, Time.deltaTime * 5);
+            }
         }
     }
 }

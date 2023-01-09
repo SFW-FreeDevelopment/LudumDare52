@@ -1,12 +1,11 @@
-﻿namespace LD52.Models
-{
-    public class CropInstance
-    {
-        public string CropId { get; }
+﻿using LD52.Enums;
+using UnityEngine;
 
-        public CropInstance(string cropId)
-        {
-            CropId = cropId;
-        }
+namespace LD52.Models
+{
+    public class CropInstance : MonoBehaviour
+    {
+        [SerializeField] private CropType _cropType;
+        public CropType CropType => _cropType;
     }
 }
