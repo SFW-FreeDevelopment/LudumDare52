@@ -33,7 +33,14 @@ namespace LD52.Managers
                 var spawnedObj = Instantiate(_audioObjectPrefab);
                 var audioSource = spawnedObj.GetComponent<AudioSource>();
                 audioSource.clip = clip;
-                audioSource.volume = SettingsManager.Instance.Settings.SfxVolume;
+                try
+                {
+                    audioSource.volume = SettingsManager.Instance.Settings.SfxVolume;
+                }
+                catch
+                {
+                    // do nothing
+                }
                 audioSource.Play();
             }
         }

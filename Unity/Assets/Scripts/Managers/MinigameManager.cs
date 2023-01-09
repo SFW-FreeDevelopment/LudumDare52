@@ -33,7 +33,14 @@ namespace LD52.Managers
         protected override void InitSingletonInstance()
         {
             ResetUI();
-            _musicAudioSource.volume = SettingsManager.Instance.Settings.MusicVolume;
+            try
+            {
+                _musicAudioSource.volume = SettingsManager.Instance.Settings.MusicVolume;
+            }
+            catch
+            {
+                // do nothing
+            }
             EventController.OnBasketCollected += OnBasketCollected;
             EventController.OnGameOver += OnGameOver;
             _gameOverReturnButton.onClick.AddListener(() =>
