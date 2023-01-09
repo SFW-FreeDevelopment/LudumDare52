@@ -18,8 +18,7 @@ namespace LD52
         private BoxCollider2D _boxCollider2D;
         private CropInstance _cropInstance;
         private SpriteRenderer _spriteRenderer;
-        
-        
+
         private void Awake()
         {
             _boxCollider2D = GetComponent<BoxCollider2D>();
@@ -46,9 +45,7 @@ namespace LD52
             {
                 if (_basket.CheckIncomingCrop(_cropInstance.CropType))
                 {
-                    // TODO: Hide, start respawn routine, etc.
-                    _spriteRenderer.enabled = false;
-                    Debug.Log("Crop correct");
+                    _cropInstance.Respawn();
                 }
                 else
                 {
@@ -80,7 +77,6 @@ namespace LD52
                 Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
                 transform.Translate(mousePosition);
             }
-
         }
     }
 }

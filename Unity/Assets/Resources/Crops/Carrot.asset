@@ -13,4 +13,5 @@ MonoBehaviour:
   m_Name: Carrot
   m_EditorClassIdentifier: 
   _sprite: {fileID: 21300000, guid: a3bf0c7d427cb184db42d3a5ec225d8d, type: 3}
-  _respawnTime: 5
+  _respawnTime: 60
+  _cropType: 0
